@@ -56,7 +56,7 @@ export default function Hero() {
                         >
                             <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight -mr-24'>Shop Smarter with </h1>
                             <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight'>PayNback</h1>
-                            <h1 className='pl-8 sm:pl-12 md:pl-16 lg:pl-20 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-gray-500 leading-tight '>With our tool</h1>
+                            <h1 className='pl-8 pt-5 sm:pl-12 md:pl-16 lg:pl-20 text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-semibold text-gray-500 leading-tight '>With our tool</h1>
                         </motion.div>
 
                         <motion.button
