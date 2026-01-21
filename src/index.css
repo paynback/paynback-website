@@ -1,0 +1,147 @@
+/* Import Tailwind and animations */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Custom dark variant */
+@custom-variant dark (&:is(.dark *));
+
+/* Theme mapping – only core shadcn vars + primary */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Font override */
+  --font-sans: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Shadcn semantic colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Optional charts if you use them */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --animate-meteor: meteor 5s linear infinite;
+  @keyframes meteor {
+  0% {
+    transform: rotate(var(--angle)) translateX(0);
+    opacity: 1;
+    }
+  70% {
+    opacity: 1;
+    }
+  100% {
+    transform: rotate(var(--angle)) translateX(-500px);
+    opacity: 0;
+    }
+  }
+}
+
+/* Light mode (root) */
+:root {
+  --radius: 0.625rem;
+
+  /* Neutrals – standard shadcn feel */
+  --background: oklch(99.5% 0 0);          /* near-white */
+  --foreground: oklch(15% 0.02 260);       /* near-black with blue tint */
+  --card: oklch(99.8% 0.005 260);
+  --card-foreground: oklch(15% 0.02 260);
+  --popover: oklch(99.8% 0.005 260);
+  --popover-foreground: oklch(15% 0.02 260);
+
+  /* Primary: nice mid-blue (light mode version – calm & professional) */
+  --primary: oklch(62% 0.18 240);          /* Main blue – good saturation */
+  --primary-foreground: oklch(98% 0 0);    /* white text on primary */
+
+  /* Secondary / muted / accent – keep shadcn defaults-ish */
+  --secondary: oklch(96% 0.01 260);
+  --secondary-foreground: oklch(30% 0.03 260);
+  --muted: oklch(96% 0.01 260);
+  --muted-foreground: oklch(55% 0.03 260);
+  --accent: oklch(96% 0.01 260);
+  --accent-foreground: oklch(30% 0.03 260);
+
+  --destructive: oklch(58% 0.24 27);       /* red for errors */
+  --border: oklch(92% 0.01 260);
+  --input: oklch(92% 0.01 260);
+  --ring: oklch(62% 0.18 240 / 0.5);       /* subtle blue ring */
+
+  /* Charts – blue-inspired if needed */
+  --chart-1: oklch(65% 0.18 240);
+  --chart-2: oklch(55% 0.18 260);
+  --chart-3: oklch(70% 0.15 220);
+}
+
+/* Dark mode */
+.dark {
+  --background: oklch(12% 0.02 260);       /* deep dark */
+  --foreground: oklch(98% 0.01 260);       /* near-white */
+  --card: oklch(18% 0.03 260);
+  --card-foreground: oklch(98% 0.01 260);
+  --popover: oklch(18% 0.03 260);
+  --popover-foreground: oklch(98% 0.01 260);
+
+  /* Primary: brighter blue for dark mode (better visibility & pop) */
+  --primary: oklch(78% 0.16 240);          /* lighter/vivid blue */
+  --primary-foreground: oklch(12% 0.02 260); /* dark text on primary */
+
+  /* Keep neutrals muted */
+  --secondary: oklch(24% 0.03 260);
+  --secondary-foreground: oklch(90% 0.01 260);
+  --muted: oklch(24% 0.03 260);
+  --muted-foreground: oklch(70% 0.04 260);
+  --accent: oklch(24% 0.03 260);
+  --accent-foreground: oklch(90% 0.01 260);
+
+  --destructive: oklch(70% 0.19 22);
+  --border: oklch(100% 0 0 / 0.12);
+  --input: oklch(100% 0 0 / 0.18);
+  --ring: oklch(78% 0.16 240 / 0.5);
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
