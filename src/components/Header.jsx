@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { TextAnimate } from '@/components/ui/text-animate'
+import Nlogo from '@/assets/company_logo_&_mascot/N_only_logo.png'
 
 
 
@@ -32,10 +33,6 @@ export default function Header() {
             href: '/pricing'
         },
         {
-            name: 'Contact',
-            href: '/contact'
-        },
-        {
             name: 'FAQ',
             href: '/faq'
         }
@@ -47,8 +44,13 @@ export default function Header() {
             <div
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className="inline-block cursor-pointer"
+                className="flex items-center gap-2 cursor-pointer"
             >
+                <img 
+                    src={Nlogo} 
+                    alt="PayNback Logo" 
+                    className="h-10 w-10 object-contain transition-transform duration-500 hover:scale-110"
+                />
                 <TextAnimate
                     animation="blurInUp"
                     by="character"
@@ -56,12 +58,12 @@ export default function Header() {
                     // Key: force animation restart by changing key when hover starts
                     key={isHovered ? 'hovered' : 'idle'}
                     className={`
-          text-xl font-bold
+          text-xl font-medium
           ${isHovered ? 'animate-blurInUp' : ''}
           transition-all duration-500
         `}
                 >
-                    Paynback
+                    PayNback
                 </TextAnimate>
             </div>
 
@@ -148,10 +150,10 @@ export default function Header() {
                         duration={0.5}
                         key={`button-${buttonHoverCount}`}
                     >
-                        View Demo
+                        Contact Us
                     </TextAnimate>
                 ) : (
-                    <span>View Demo</span>
+                    <span>Contact Us</span>
                 )}
             </Button>
         </div>

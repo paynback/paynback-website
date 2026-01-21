@@ -9,6 +9,7 @@ import image from '../../public/phone.png'
 import { NumberTicker } from "@/components/ui/number-ticker"
 import { StarsBackground } from '@/components/Starbackground'
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern"
+import { Apple, Play } from 'lucide-react'
 
 
 export default function Hero() {
@@ -54,25 +55,54 @@ export default function Hero() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                         >
-                            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight -mr-24'>Shop Smarter with </h1>
-                            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold leading-tight'>PayNback</h1>
-                            <h1 className='pl-8 pt-5 sm:pl-12 md:pl-16 lg:pl-20 text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-semibold text-gray-500 leading-tight '>With our tool</h1>
+                            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal  leading-tight -mr-28 text-start '>Shop Smarter </h1>
+                            <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal  leading-tight -mr-8 text-end '>With Paynback </h1>
+                            <h1 className=' pt-2  text-6xl sm:text-4xl md:text-5xl lg:text-2xl font-normal text-gray-500 leading-tight text-start pl-10'>Sign up and become a member</h1>
                         </motion.div>
 
 
-                        <motion.button
-                            className='flex items-center justify-between gap-4 bg-blue-100 text-blue-600 font-semibold px-6 sm:px-8 py-3 h-14 sm:h-16 rounded-full hover:bg-blue-200 transition-colors cursor-pointer w-fit'
+                        <motion.div
+                            className='w-full  rounded-xl p-6 sm:p-8 flex flex-col gap-5'
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
                         >
-                            <span className='text-base sm:text-lg'>Get Started </span>
-                            <div className='flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 text-white rounded-full'>
-                                <ArrowRight size={18} className='sm:w-5 sm:h-5' />
+                            <h2 className='text-xl  font-semibold text-gray-900'>Get The App Now</h2>
+
+                            <div className='flex   gap-4 '>
+                                {/* Google Play Button */}
+                                <motion.a
+                                    href='https://play.google.com/store'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='flex items-center gap-4 px-3 py-4 w-52 h-16 rounded-lg bg-white text-black hover:bg-gray-100 transition-all flex-1 border border-gray-400'
+                                    whileHover={{ scale: 1.03 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    <img src="https://cdn-icons-png.flaticon.com/512/300/300218.png " className='w-7 h-7 text-green-500 ' />
+                                    <div className='flex flex-col'>
+                                        <span className='text-xs font-medium'>Get it on</span>
+                                        <span className='text-sm font-semibold'>Google Play</span>
+                                    </div>
+                                </motion.a>
+
+                                {/* App Store Button */}
+                                <motion.a
+                                    href='https://apps.apple.com'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='flex items-center gap-4 px-3 py-4 w-52 h-16 rounded-lg bg-white text-black hover:bg-gray-100 transition-all flex-1 border border-gray-400'
+                                    whileHover={{ scale: 1.03 }}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    <img src="https://cdn-icons-png.flaticon.com/512/15263/15263166.png " className='w-7 h-7 text-gray-800 ' />
+                                    <div className='flex flex-col'>
+                                        <span className='text-xs font-medium'>Download on the</span>
+                                        <span className='text-sm font-semibold'>App Store</span>
+                                    </div>
+                                </motion.a>
                             </div>
-                        </motion.button>
+                        </motion.div>
                     </motion.div>
 
                     <motion.div
@@ -114,12 +144,12 @@ export default function Hero() {
                         <motion.div
                             className='w-full h-full'
                             initial={{ y: "100%", opacity: 0 }}
-                            animate={{ 
-                                y: isHovered ? mousePosition.y : 0, 
+                            animate={{
+                                y: isHovered ? mousePosition.y : 0,
                                 x: isHovered ? mousePosition.x : 0,
-                                opacity: 1 
+                                opacity: 1
                             }}
-                            transition={{ 
+                            transition={{
                                 y: isHovered ? { type: "spring", stiffness: 150, damping: 15, mass: 0.1 } : { duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.4 },
                                 x: isHovered ? { type: "spring", stiffness: 150, damping: 15, mass: 0.1 } : { duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.4 },
                                 opacity: { duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }
@@ -132,14 +162,15 @@ export default function Hero() {
                     </motion.div>
 
                     <motion.div
-                        className='w-full sm:w-3/4 md:w-2/3 lg:w-1/3 flex flex-col p-6 sm:p-8 bg-white rounded-lg order-2 lg:order-3 min-h-[300px] sm:min-h-[350px] lg:h-1/2'
+                        className='w-full sm:w-3/4 md:w-2/3 lg:w-1/3 flex flex-col p-6 sm:p-8  rounded-lg order-2 lg:order-3 min-h-[300px] sm:min-h-[350px] lg:h-1/2 gap-10'
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
                     >
                         <div className='flex items-center justify-start mb-4'>
-                            <div className='w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-blue-500 rounded'>
-                                <Plus className='w-5 h-5 sm:w-6 sm:h-6 text-blue-500' />
+                            <div className='w-12 h-12   
+                              flex items-center justify-center  rounded'>
+                                <img src="https://cdn-icons-png.flaticon.com/512/1545/1545211.png" className='w-full h-full  text-blue-500' />
                             </div>
                         </div>
 
@@ -179,7 +210,7 @@ export default function Hero() {
                 </section>
 
                 <motion.section
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] bg-gradient-to-b from-blue-700 via-blue-800 to-blue-500 rounded-t-3xl -mt-32 sm:-mt-40 lg:-mt-60 relative z-10 overflow-hidden"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] bg-gradient-to-b from-blue-700 via-blue-800 to-blue-500 rounded-t-3xl -mt-32 sm:-mt-40 lg:-mt-60 relative z-10 overflow-hidden "
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
