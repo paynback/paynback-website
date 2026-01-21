@@ -59,6 +59,7 @@ export default function Hero() {
                             <h1 className='pl-8 pt-5 sm:pl-12 md:pl-16 lg:pl-20 text-3xl sm:text-4xl md:text-5xl lg:text-3xl font-semibold text-gray-500 leading-tight '>With our tool</h1>
                         </motion.div>
 
+
                         <motion.button
                             className='flex items-center justify-between gap-4 bg-blue-100 text-blue-600 font-semibold px-6 sm:px-8 py-3 h-14 sm:h-16 rounded-full hover:bg-blue-200 transition-colors cursor-pointer w-fit'
                             initial={{ opacity: 0, y: 20 }}
